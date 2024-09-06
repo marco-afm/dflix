@@ -1,0 +1,12 @@
+@use '../abstracts/variaveis';
+@use '../reset.css';
+
+body {
+    box-sizing: border-box;
+    color: variaveis.$branco;
+    background-color: variaveis.$preto;
+    font-family: variaveis.$ft-Open-Sans;
+    font-size: 1rem;
+
+    // background-color: variaveis.$laranja;
+}

@@ -1,0 +1,94 @@
+@use '../abstracts/variaveis';
+@use '../abstracts/mixins';
+
+#preocupacoes {
+    display: flex;
+    height: 53.75rem;
+
+    // MOBILE ----------
+    @media screen and (max-width: variaveis.$mobile) {
+        height: auto;
+        background: none;
+        background: linear-gradient(to bottom, variaveis.$transparente, variaveis.$preto);
+    }
+
+    #img-bg2 {
+        display: block;
+        position: absolute;
+        z-index: -999;
+
+        width: 100%;
+        height: 53.75rem;
+        background: linear-gradient(to bottom, #212121df, variaveis.$transparente, variaveis.$transparente, #212121df),
+                    url('../../assets/img-bg2.png') no-repeat center center/contain;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            height: 33.25rem;
+            background: linear-gradient(to top, variaveis.$preto, variaveis.$transparente, variaveis.$transparente),
+                        url('../../assets/img-bg2-mobile.png') no-repeat center center/cover;
+        }
+    }
+
+    .preocupacoes__conteudo {
+        @include mixins.flex-column;
+        margin: auto 9.5% auto auto;
+        width: 35%;
+        gap: 1rem;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            margin: 10rem 0 0 0;
+            width: 100%;
+            padding-bottom: 3rem;
+            gap: 0.5rem;
+        }
+
+        .preocupacoes__span {
+            @include mixins.fs-fw(1.125rem, 700);
+            color: variaveis.$verde;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.fs-fw(0.875rem, 700);
+                margin: 0.125rem 0 0.25rem 1.5rem;
+            }
+        }
+
+        .preocupacoes__titulo {
+            @include mixins.fs-fw(3rem, 700);
+            line-height: 3.5rem;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.fs-fw(1.5rem, 700);
+                line-height: 1.75rem;
+                width: auto;
+                margin-left: 1.5rem;
+            }
+        }
+
+        .preocupacoes__texto {
+            @include mixins.fs-fw(1.5rem, 400);
+            width: 80%;
+            line-height: 2rem;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.fs-fw(1rem, 400);
+                line-height: 1.5rem;
+                width: 82%;
+                margin-left: 1.5rem;
+            }
+        }
+
+        .botao-laranja {
+            @include mixins.botao-laranja;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.bt-laranja-mobile;
+            }
+        }
+    }
+}

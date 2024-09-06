@@ -1,0 +1,54 @@
+@use '../abstracts/variaveis';
+@use '../abstracts/mixins';
+
+#flutuante {
+    display: block;
+    @include mixins.flex-column;
+    text-align: center;
+    padding: 3.5rem 2rem;
+    
+    position: fixed;
+    bottom: 10%;
+    right: 3rem;
+
+    background-color: variaveis.$laranja;
+    border-radius: 999px;
+
+    // MOBILE ----------
+    @media screen and (max-width: variaveis.$mobile) {
+        display: none;
+    }
+
+    .flutuante__titulo {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        @include mixins.fs-fw(1.75rem, 700);
+
+        strong {
+            @include mixins.fs-fw(2.8rem, 700);
+            text-transform: uppercase;
+        }
+    }
+
+    .botao-transparente {
+        @include mixins.fs-fw(0.875rem, 700);
+        @include mixins.botao-transparente;
+        text-transform: uppercase;
+        margin: 1rem auto 0 auto;
+    }
+
+    #x-icone {
+        position: absolute;
+        right: 1rem;
+        top: 10%;
+    }
+
+    #close {
+        display: none;
+
+        &:checked~.flutuante {
+            display: none;
+        }
+    }
+}

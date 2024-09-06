@@ -1,0 +1,49 @@
+@use '../abstracts/variaveis';
+@use '../abstracts/mixins';
+
+#rodape {
+    @include mixins.flex-column;
+    border-top: 1px solid variaveis.$branco;
+
+    // MOBILE ----------
+    @media screen and (max-width: variaveis.$mobile) {
+        border: none;
+    }
+
+    .rodape__div {
+        display: flex;
+        justify-content: space-between;
+
+        margin: 3rem 13% 2rem 13%;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            margin: 3rem auto;
+        }
+        
+        span {
+            @include mixins.fs-fw(0.75rem, 400);
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                display: none;
+            }
+        }
+    }
+
+    .desenvolvedor {
+        margin: 0 auto 2rem auto;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            margin: 0 auto 2.5rem auto;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+
+            @include mixins.fs-fw(0.75rem, 600);
+        }
+    }
+}

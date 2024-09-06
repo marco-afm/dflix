@@ -1,0 +1,40 @@
+@use '../abstracts/variaveis';
+
+@mixin botao-laranja {
+    background-color: variaveis.$laranja;
+    width: fit-content;
+    padding: 1.25rem 2rem;
+    border-radius: 999px;
+    color: variaveis.$branco;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+@mixin bt-laranja-mobile {
+    @include botao-laranja();
+    font-size: 0.875rem;
+    padding: 1.25rem 7.5rem;
+    margin: 0 auto;
+}
+
+@mixin botao-transparente {
+    background-color: transparent;
+    width: fit-content;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid variaveis.$branco;
+    color: variaveis.$branco;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+@mixin fs-fw($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}

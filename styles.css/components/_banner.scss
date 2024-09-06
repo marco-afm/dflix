@@ -1,0 +1,95 @@
+@use '../abstracts/variaveis';
+@use '../abstracts/mixins';
+
+#banner {
+    display: flex;
+    height: auto;
+    margin: 7rem auto 5rem auto;
+
+    // MOBILE ----------
+    @media screen and (max-width: variaveis.$mobile) {
+        height: auto;
+        margin: 0;
+    }
+
+    .banner__img {
+        display: block;
+        position: absolute;
+        z-index: -999;
+        width: 100%;
+        height: 32.62rem;
+        background: url('../../assets/picture2.png') no-repeat center center/contain;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            height: 21.69rem;
+            background: url('../../assets/picture2-mobile.png') no-repeat center center/cover;
+        }
+    }
+
+    .banner__conteudo {
+        @include mixins.flex-column;
+        gap: 2rem;
+        width: 100%;
+        margin: 6rem 20%;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            margin: 3rem 0;
+            gap: 0;
+        }
+
+        .logo {
+            width: fit-content;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                width: 25vmin;
+                margin: 0 1rem;
+            }
+        }
+
+        .banner__texto {
+            @include mixins.fs-fw(2rem, 400);
+            width: 56%;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.fs-fw(1.125rem, 500);
+                width: 75%;
+                line-height: 1.3rem;
+                margin: 1.5rem 1rem 0.5rem 1rem;
+            }
+        }
+
+        .valor {
+            @include mixins.fs-fw(1.5rem, 400);
+            line-height: 2rem;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.fs-fw(1.125rem, 400);
+                margin: 0 1rem 1.5rem 1rem;
+                line-height: 1.5rem;
+            }
+
+            strong {
+                @include mixins.fs-fw(2rem, 500);
+
+                // MOBILE ----------
+                @media screen and (max-width: variaveis.$mobile) {
+                    @include mixins.fs-fw(1.5rem, 500);
+                }
+            }
+        }
+
+        .botao-laranja {
+            @include mixins.botao-laranja;
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                @include mixins.bt-laranja-mobile;
+            }
+        }
+    }
+}

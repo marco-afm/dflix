@@ -1,0 +1,50 @@
+@use '../abstracts/variaveis';
+@use '../abstracts/mixins';
+
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 13%;
+    background: linear-gradient(to bottom, variaveis.$preto, variaveis.$transparente);
+
+    // MOBILE ----------
+    @media screen and (max-width: variaveis.$mobile) {
+        padding: 2rem 1rem;
+        background: none;
+    }
+
+    .logo {
+
+        img {
+
+            // MOBILE ----------
+            @media screen and (max-width: variaveis.$mobile) {
+                width: 80%;
+            }
+        }
+    }
+
+    .login {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        // MOBILE ----------
+        @media screen and (max-width: variaveis.$mobile) {
+            display: none;
+        }
+
+        .botao-laranja {
+            @include mixins.botao-laranja;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .botao-transparente {
+            @include mixins.botao-transparente;
+            text-transform: uppercase;
+        }
+    }
+}
